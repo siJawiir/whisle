@@ -1,3 +1,4 @@
+import { JWT } from "next-auth/jwt";
 import {
   SPOTIFY_ACCESS_TOKEN,
   SPOTIFY_REFRESH_TOKEN,
@@ -75,4 +76,22 @@ export function setTokenCookies(
 
   response.cookies.delete(WHISLE_REDIRECT);
   return response;
+}
+
+export async function refreshAccessToken(token: JWT): Promise<JWT> {
+  const data = await fetchSpotifyToken({
+    grant_type: "refresh_token",
+    refresh_token: token.refreshToken as string,
+  });
+
+  if (!data || data.error) {
+    console.error("Failed to refresh Spotify token:", data?.error);
+    return { ...token, error: "RefreshAccessTokenError" };
+  }
+  return {
+    ...token,
+    accessToken: data.access_token,
+    accessTokenExpires: Date.now() + data.expires_in * 1000,
+    refreshToken: data.refresh_token ?? token.refreshToken,
+  };
 }

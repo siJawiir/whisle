@@ -13,7 +13,7 @@ export default function HomePage() {
       <div className="absolute inset-0 pointer-events-none" />
 
       <div className="relative z-10 flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-6 duration-1000">
-        <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] text-sky-400">
+        <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] text-sky-400 mt-30">
           Welcome to Whisle
         </span>
 

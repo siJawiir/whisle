@@ -10,6 +10,10 @@ export default async function proxy(request: NextRequest) {
   const { pathname, searchParams, origin } = request.nextUrl;
   const cookies = request.cookies;
 
+  if (pathname.startsWith("/api/auth")) {
+    return NextResponse.next();
+  }
+
   const code = searchParams.get("code");
   const authError = searchParams.get("error");
   const refreshToken = cookies.get(SPOTIFY_REFRESH_TOKEN)?.value;
@@ -19,12 +23,13 @@ export default async function proxy(request: NextRequest) {
     return NextResponse.redirect(new URL(redirectPath, request.url));
   }
 
-  if (code) {
+  if (code && !pathname.includes("/api/auth/callback")) {
     const data = await fetchSpotifyToken({
       code,
       redirect_uri: origin,
       grant_type: "authorization_code",
     });
+
     return setTokenCookies(
       NextResponse.redirect(new URL(redirectPath, request.url)),
       data,
@@ -48,5 +53,5 @@ export default async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
+  matcher: ["/((?!api/auth|_next/static|_next/image|favicon.ico).*)"],
 };

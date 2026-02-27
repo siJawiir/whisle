@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Whisle – Premium Music Discovery & Streaming Experience
 
-## Getting Started
+[![Whisle](https://whisle.vercel.app/og-image.png)](https://whisle.vercel.app)
 
-First, run the development server:
+**Whisle** is a high-performance music streaming platform built on top of the Spotify API. Designed for speed and aesthetics, Whisle provides a seamless way to explore the vast Spotify catalog with a modern, minimalist interface.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+> **Live Demo:** [whisle.vercel.app](https://whisle.vercel.app)
+
+---
+
+## ✨ Key Features
+
+- **🎯 Extensive Music Library** – Access millions of tracks, albums, and curated playlists.
+- **🎧 Seamless Playback Controls** – Full control including shuffle, repeat, seek, and real-time volume adjustment.
+- **⚡ High-Performance Architecture** – Blazing fast experience powered by Bun and Next.js 14.
+- **🔍 Powerful Search Function** – Effortlessly find your favorite songs, artists, albums, and playlists.
+- **📱 Responsive Design** – Clean and intuitive UI that works perfectly on both desktop and mobile.
+- **🔒 Secure Authentication** – Safe and easy login via Spotify OAuth.
+
+## ✨ Features
+
+- 🔑 **Authentication** with Spotify
+- 📚 **Extensive Library** synchronization
+- 📝 **Detailed Information**:
+  - 🎵 Song details
+  - 📔 Album details
+  - 👥 Artist profiles
+  - 📃 Playlist details
+- 🔍 **Easy Search Functionality**:
+  - 🎵 Songs
+  - 👥 Artists
+  - 📔 Albums
+  - 📃 Playlists
+- 🎵 **Stream Songs**:
+  - ▶️ Play / ⏸️ Pause
+  - ⏮️ Previous / ⏭️ Next track
+  - 🔀 Shuffle / 🔁 Repeat
+  - 🔍 Seek / 🔊 Volume control
+  - 📱 Mobile-ready player
+
+## 🛠️ Tech Stack
+
+- **Next.js 14** (App Router)
+- **Bun** (Runtime & Package Manager)
+- **Shadcn UI** & **Tailwind CSS**
+- **Zustand** (State Management)
+- **TanStack Query** (Data Fetching)
+- **Spotify Web API**
+
+## 🚀 Fork the repository
+
+### 1. Fork
+Click the **Fork** button at the top-right corner of this page to create a copy of this repository in your account.
+
+### 2. Clone Your Forked Repository
+
+```sh
+git clone [https://github.com/sijawiir/whisle.git](https://github.com/sijawiir/whisle.git)
+
+cd whisle
+
+bun install
+
+cp .env.example .env
+
 bun dev
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🤝 Contributing
+Contributions are welcome! Please refer to our [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). Feel free to fork the repository, make your changes, and submit a pull request.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📜 License
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the [MIT License](LICENSE).

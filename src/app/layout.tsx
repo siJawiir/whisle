@@ -5,6 +5,7 @@ import Providers from "@/components/layout/Providers";
 import Sidebar from "@/components/layout/Sidebar";
 import Navbar from "@/components/layout/Navbar";
 import NowPlayingBar from "@/components/player/NowPlayingBar";
+import { PremiumAlert } from "@/components/modal/PremiumAlert";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -51,14 +52,16 @@ export default function RootLayout({
             <div className="flex-1 flex flex-col min-w-0">
               <Navbar />
 
-              <main className="flex-1 overflow-y-auto relative pt-20">
+              <main className="flex-1 overflow-y-auto relative">
                 <div className="absolute inset-0 bg-linear-to-b from-sky-900/20 via-transparent to-transparent -z-10" />
-                <div className="">{children}</div>
+                <div>{children}</div>
+                <div className="mt-20"></div>
               </main>
             </div>
           </div>
 
           <NowPlayingBar />
+          <PremiumAlert />
         </Providers>
       </body>
     </html>

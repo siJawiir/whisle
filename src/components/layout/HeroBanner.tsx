@@ -5,6 +5,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import { signIn } from "next-auth/react";
 import { useState } from "react";
 import LoginWarning from "../auth/LoginWarning";
+import { Button } from "../ui/button";
 
 export default function HeroBanner() {
   const [showWarning, setShowWarning] = useState(false);
@@ -38,7 +39,7 @@ export default function HeroBanner() {
             </div>
 
             <div className="flex items-center gap-3">
-              <button
+              <Button
                 type="button"
                 onClick={() => setShowWarning(true)}
                 className="group/btn flex items-center gap-2 h-10 px-5 bg-sky-500 hover:bg-sky-400 text-zinc-950 text-xs font-bold rounded-full transition-all active:scale-95 shadow-lg shadow-sky-500/10"
@@ -48,7 +49,7 @@ export default function HeroBanner() {
                   size={14}
                   className="transition-transform group-hover/btn:translate-x-0.5"
                 />
-              </button>
+              </Button>
             </div>
           </div>
         </div>

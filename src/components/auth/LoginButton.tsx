@@ -10,7 +10,7 @@ export default function LoginButton() {
   const [showModal, setShowModal] = useState(false);
 
   const handleLogin = () => {
-    signIn("spotify");
+    signIn("spotify", { callbackUrl: "/discover" });
   };
 
   return (

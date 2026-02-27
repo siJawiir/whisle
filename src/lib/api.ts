@@ -1,11 +1,17 @@
 import Axios from "axios";
+import { getSession } from "next-auth/react";
 
-export const createClientAxios = (token: string) => {
-  return Axios.create({
-    baseURL: process.env.SPOTIFY_API_URL,
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json",
-    },
-  });
-};
+export const spotifyApi = Axios.create({
+  baseURL: process.env.NEXT_PUBLIC_SPOTIFY_API_URL,
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
+
+spotifyApi.interceptors.request.use(async (config) => {
+  const session = await getSession();
+  if (session?.accessToken) {
+    config.headers.Authorization = `Bearer ${session.accessToken}`;
+  }
+  return config;
+});

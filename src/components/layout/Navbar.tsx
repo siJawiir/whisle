@@ -57,7 +57,7 @@ export default function Navbar() {
 
       <div className="flex-1 flex justify-center max-w-2xl mx-auto">
         <div className="w-full relative group px-4">
-          <SearchBar />
+          {!!user && <SearchBar />}
         </div>
       </div>
 

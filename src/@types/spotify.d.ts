@@ -1,3 +1,14 @@
+export interface SpotifyBase {
+  id: string;
+  name: string;
+}
+
+export type DiscoverDataType =
+  | SpotifyArtist
+  | SpotifyTrack
+  | SpotifyAlbum
+  | SpotifyPlaylist;
+
 export interface SpotifyImage {
   url: string;
   height?: number;
@@ -8,14 +19,27 @@ export interface SpotifyExternalUrls {
   spotify: string;
 }
 
+export interface SpotifyFollowers {
+  href: string | null;
+  total: number;
+}
+
 export interface SpotifyArtist {
   id: string;
   name: string;
   images: SpotifyImage[];
-  genres?: string[];
-  external_urls: SpotifyExternalUrls;
   type: "artist";
-  uri?: string;
+  external_urls: {
+    spotify: string;
+  };
+  href: string;
+  uri: string;
+  genres?: string[];
+  popularity?: number;
+  followers?: {
+    href: string | null;
+    total: number;
+  };
 }
 
 export interface SpotifyAlbum {
@@ -129,4 +153,27 @@ export interface SavedAlbumItem {
 
 export interface FollowedArtistsResponse {
   artists: SpotifyPaginatedResponse<SpotifyArtist>;
+}
+
+export interface SpotifyUserProfile {
+  country: string;
+  display_name: string;
+  email: string;
+  explicit_content: {
+    filter_enabled: boolean;
+    filter_locked: boolean;
+  };
+  external_urls: {
+    spotify: string;
+  };
+  followers: {
+    href: string | null;
+    total: number;
+  };
+  href: string;
+  id: string;
+  images: SpotifyImage[];
+  product: "premium" | "free" | "open";
+  type: "user";
+  uri: string;
 }
