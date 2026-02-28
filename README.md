@@ -12,7 +12,7 @@
 
 - **🎯 Extensive Music Library** – Access millions of tracks, albums, and curated playlists.
 - **🎧 Seamless Playback Controls** – Full control including shuffle, repeat, seek, and real-time volume adjustment.
-- **⚡ High-Performance Architecture** – Blazing fast experience powered by Bun and Next.js 14.
+- **⚡ High-Performance Architecture** – Blazing fast experience powered by Bun and Next.js 16.
 - **🔍 Powerful Search Function** – Effortlessly find your favorite songs, artists, albums, and playlists.
 - **📱 Responsive Design** – Clean and intuitive UI that works perfectly on both desktop and mobile.
 - **🔒 Secure Authentication** – Safe and easy login via Spotify OAuth.
@@ -40,7 +40,7 @@
 
 ## 🛠️ Tech Stack
 
-- **Next.js 14** (App Router)
+- **Next.js 16** (App Router)
 - **Bun** (Runtime & Package Manager)
 - **Shadcn UI** & **Tailwind CSS**
 - **Zustand** (State Management)
