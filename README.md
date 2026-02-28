@@ -1,6 +1,6 @@
 # Whisle – Premium Music Discovery & Streaming Experience
 
-[![Whisle](https://whisle.vercel.app/og-image.png)](https://whisle.vercel.app)
+[![Whisle](https://raihanmarwanda.vercel.app/projects/whisle-1.png)](https://whisle.vercel.app)
 
 **Whisle** is a high-performance music streaming platform built on top of the Spotify API. Designed for speed and aesthetics, Whisle provides a seamless way to explore the vast Spotify catalog with a modern, minimalist interface.
 
